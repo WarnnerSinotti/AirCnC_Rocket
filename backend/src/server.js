@@ -1,7 +1,16 @@
-const express = require('express');
-const routes = require('./routes');
+const express = require("express");
+const routes = require("./routes");
+const mongoose = require("mongoose");
 
 const app = express();
+
+mongoose.connect(
+  "mongodb+srv://semana9:semana9@cluster0.hkl7l.mongodb.net/Semana09?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 
 // GET, POST , PUT, DELETE
 

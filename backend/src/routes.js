@@ -1,9 +1,20 @@
-const express = require('express');
+const express = require("express");
+const multer = require("multer");
+const uploadConfig = require("./config/upload");
+const SessionController = require("../src/controllers/SessionController");
+const SpotController = require("../src/controllers/SpotController");
+const DashboardController = require("../src/controllers/DashboardController");
+const BookingController = require("../src/controllers/BookingController");
 
 const routes = express.Router();
+const upload = multer(uploadConfig);
 
-routes.get("/users", (req, res) => {
-  return res.json( req.body );
-});
+routes.post("/sessions", SessionController.store);
+
+routes.get("/spots", SpotController.index);
+routes.post("/spots", upload.single("thumbnail"), SpotController.store);
+routes.get("/dashboards", DashboardController.show);
+
+routes.post("/spots/:spot_id/bookings", BookingController.store);
 
 module.exports = routes;
