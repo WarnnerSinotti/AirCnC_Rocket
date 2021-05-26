@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  background: #000 url("./assets/background.jpg") no-repeat;
+  background-size: cover;
+  -webkit-font-smoothing: antialiased !important ;
+}
+
+body,
+input,
+button {
+  font-family: "Roboto", Arial, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.container {
+  margin: 80px auto 0;
+  max-width: 450px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  width: 100%;
+  background: #fff;
+  margin-top: 50px;
+  border-radius: 4px;
+  padding: 30px;
+}
+
+.content > p {
+  font-size: 22px;
+  line-height: 30px;
+  margin-bottom: 30px;
+}
+
+.content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.content form label {
+  font-size: 14px;
+  color: #444;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.content form input {
+  margin-top: 20px;
+  border: #000 1px solid;
+  border-radius: 2px;
+  height: 45px;
+  padding: 0 15px;
+  font-size: 16px;
+}
+
+.content button.loginbtn {
+  border: 0px;
+  border-radius: 2px;
+  margin-top: 20px;
+  width: 100%;
+  height: 42px;
+  padding: 0 15px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: rgb(62, 116, 116);
+  color: #fff;
+  cursor: pointer;
+}
+
+.content button.loginbtn:hover {
+  background-color: rgb(69, 155, 155);
+}
