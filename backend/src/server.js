@@ -1,6 +1,7 @@
 const express = require("express");
 const routes = require("./routes");
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 const app = express();
 
@@ -18,6 +19,7 @@ mongoose.connect(
 // req.params = Acessar route params (para edição, delete)
 // req.body = Acessar corpo da requisição (para criação, edição)
 
+app.use(cors()); //qualquer tipo de acesso pode utilizar a api
 app.use(express.json()); // informando para utilizar o json no insomnia
 app.use(routes); // após do use.json
 
