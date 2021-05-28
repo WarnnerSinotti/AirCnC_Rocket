@@ -2,6 +2,7 @@ const express = require("express");
 const routes = require("./routes");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const path = require("path");
 
 const app = express();
 
@@ -21,6 +22,7 @@ mongoose.connect(
 
 app.use(cors()); //qualquer tipo de acesso pode utilizar a api
 app.use(express.json()); // informando para utilizar o json no insomnia
+app.use("/files", express.static(path.resolve(__dirname, '..', 'uploads'))); //utilizando quando tem um arquivo de upload
 app.use(routes); // após do use.json
 
 app.listen(3333);
